@@ -1,0 +1,83 @@
+
+%%        %%
+% PREAMBLE %
+% ======== %
+
+
+
+% Document class
+% --------------
+\documentclass[a4paper, 11pt]{scrbook}
+
+% Font
+% ----
+\usepackage{lmodern}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Language and typography
+% -----------------------
+\usepackage[main=english]{babel}
+
+\usepackage[autostyle=true]{csquotes}
+
+\usepackage[babel=true]{microtype}
+
+% Science
+% -------
+\usepackage{mathtools}
+\usepackage{siunitx}
+
+\usepackage{circuitikz}
+
+% Hyper links
+% -----------
+\usepackage[hidelinks]{hyperref}
+
+% References
+% ----------
+\usepackage{cleveref}
+
+
+
+%%        %%
+% DOCUMENT %
+% ======== %
+
+
+
+% Metadata
+% --------
+\author{Alexandre \textsc{Quenon}}
+
+\title{circuit-invader: circuits drawn with the \LaTeX{}'s circuitikz package}
+\subtitle{A collection}
+
+\date{Last update: \today}
+
+
+% Content
+% -------
+\begin{document}
+	
+	
+	% Cover Page
+	\maketitle
+	
+	
+	% ToC
+	\frontmatter
+	
+	\tableofcontents
+	\listoffigures
+	
+	
+	% Includes
+	\mainmatter
+	
+	\include{bipolar/bip_collection}
+	\include{cmos/cmos_collection}
+	
+
+\end{document}
