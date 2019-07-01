@@ -1,0 +1,30 @@
+
+\begin{circuitikz}
+	% Transistor
+	\draw (0,0) node[pnp](Q1){};
+	\draw (Q1) node[right] {$Q_1$};
+	% Polarization
+	\draw (Q1.B)
+		  to[short] ++(-1,0) node (bias) {}
+		  to[short, *-] (Q1.C -| bias)
+		  to[R, l_=$R_{\mathrm{B}_2}$] ++(0,-2) node (gndBias) {};
+	\draw (bias)
+		  to[short] (Q1.E -| bias)
+		  to[R, l=$R_{\mathrm{B}_1}$] ++(0,+2) node (vccBias) {};
+	% Input
+	\draw (bias)
+		  to[C, l_=$C_{\mathrm{B}}$, -o] ++(-2,0) node (vin) {};
+	\draw (vin) node[left] {$V_{\mathrm{in}}$};
+	% Output
+	\draw (Q1.C) to[R, l_=$R_{\mathrm{C}}$] ++(0,-2) node (gndOut) {};
+	\draw (Q1.C) to[short, *-o] ++(+1,0) node (vout) {};
+	\draw (vout) node[right] {$V_{\mathrm{out}}$};
+	% Supplies
+	\draw (Q1.E)
+		  to[short] (vccBias -| Q1.E) node[rground, yscale=-1] {}
+		  ++(+0.8,0) node[above] {$V_{\mathrm{cc}}$};
+	\draw (gndBias) node[ground] {};
+	\draw (gndOut) node[ground] {};
+	\draw (vccBias) node[rground, yscale=-1] {}
+		  ++(+0.8,0) node[above] {$V_{\mathrm{cc}}$};
+\end{circuitikz}

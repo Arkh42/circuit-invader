@@ -1,0 +1,20 @@
+
+\begin{circuitikz}
+	% Transistor
+	\draw (0,0) node[nmos](M1){};
+	\draw (M1) node[right] {$M_1$};
+	% Input
+	\draw (M1.G)
+		  to[short, -o] ++(-0.5,0) node (vin) {};
+	\draw (vin) node[left] {$V_{\mathrm{in}}$};
+	% Output
+	\draw (M1.D)
+		  to[R, l_=$R_{\mathrm{D}}$] ++(0,+2) node (vdd) {};
+	\draw (M1.D)
+		  to[short, *-o] ++(+1,0) node (vout) {};
+	\draw (vout) node[right] {$V_{\mathrm{out}}$};
+	% Supplies
+	\draw (M1.S) node[ground] {};
+	\draw (vdd) node[rground, yscale=-1] {}
+		  ++(+0.8,0) node[above] {$V_{\mathrm{dd}}$};
+\end{circuitikz}
