@@ -1,0 +1,42 @@
+
+\begin{circuitikz}
+	% Op amp
+	\draw (0,0) node[op amp](A1){};
+	\draw (A1) node {$A_1$};
+	% Output
+	\draw (A1.out)
+		to[short] ++(+0.5,0) node(fbin) {}
+		to[short, -o] ++(+1,0) node (vout) {};
+	\draw (vout) node[right] {$V_{\mathrm{out}}$};
+	% Inputs
+	\draw (A1.+)
+		to[short] ++(-0.5,0) 
+		to[short] ++(0,-1) node[ground] {};
+	\draw (A1.-)
+		to[short] ++(-0.5,0) node(fbout) {}
+		to[short, -*] ++(-1,0) node(Rin) {};
+	\draw (Rin)
+		to[short] ++(0,+2.5)
+		to[R, l_=$R_1$, -o] ++(-3,0) node (vin1) {};
+	\draw (vin1) node[left] {$V_{\mathrm{in},1}$};
+	\draw (Rin)
+		to[open] ++(0,+1.5)
+		to[R, l_=$R_2$, *-o] ++(-3,0) node (vin2) {};
+	\draw (vin2) node[left] {$V_{\mathrm{in},2}$};
+	\draw (Rin)
+		to[open] ++(0,0)
+		to[R, l_=$R_i$, *-o] ++(-3,0) node (vini) {};
+	\draw (vini) node[left] {$V_{\mathrm{in},i}$};
+	\draw (Rin)
+		to[short] ++(0,-1.5)
+		to[R, l_=$R_n$, -o] ++(-3,0) node (vinn) {};
+	\draw (vinn) node[left] {$V_{\mathrm{in},n}$};
+	% Ellipsis
+	\draw (vini)++(0,+0.75) node {$\vdots$};
+	\draw (vini)++(0,-0.75) node {$\vdots$};
+	% Feedback
+	\draw (fbin)
+		to[short, *-] ++(0,+2) node(fb_h) {}
+		to[R, l_=$R$] (fb_h -| fbout)
+		to[short, -*] (fbout);
+\end{circuitikz}

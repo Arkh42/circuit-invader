@@ -1,0 +1,28 @@
+
+\begin{circuitikz}
+	% Op amp
+	\draw (0,0) node[op amp](A1){};
+	\draw (A1) node {$A_1$};
+	% Output
+	\draw (A1.out)
+		to[short] ++(+0.5,0) node(fbin) {}
+		to[short, -o] ++(+1,0) node (vout) {};
+	\draw (vout) node[right] {$V_{\mathrm{out}}$};
+	% Inputs
+	\draw (A1.+)
+		to[short] ++(-0.5,0) 
+		to[short] ++(0,-0.5) node[ground] {};
+	\draw (A1.-)
+		to[short] ++(-0.5,0) node(fbout) {}
+		to[R, l_=$R_1$, -o] ++(-3,0) node (vin) {};
+	\draw (vin) node[left] {$V_{\mathrm{in}}$};
+	% Feedback
+	\draw (fbin)
+		to[short, *-] ++(0,+2) node(fb_h) {}
+		to[C, l_=$C$] (fb_h -| fbout)
+		to[short, -*] (fbout);
+	\draw (fb_h)
+		to[short, *-] ++(0,+1.5) node(fb_h2) {}
+		to[R, l_=$R_2$] (fb_h2 -| fbout)
+		to[short, -*] (fb_h -| fbout);
+\end{circuitikz}

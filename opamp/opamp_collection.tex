@@ -1,0 +1,98 @@
+
+\chapter{Operational amplifier based circuits}
+
+
+
+\section{Basic stages}
+
+
+	Basic stages include:
+	\begin{itemize}
+		\item the follower (\cref{fig__opamp__basic_stage__follower}),
+		\item the inverting amplifier (\cref{fig__opamp__basic_stage__amp_inv}), and 
+		\item the non-inverting amplifier (\cref{fig__opamp__basic_stage__amp_ninv}).
+	\end{itemize}
+
+
+	\begin{figure}[htb]
+		\centering
+		\input{opamp/basic_stages/follower.tex}
+		\caption{Follower amplifier.%
+			\label{fig__opamp__basic_stage__follower}}
+	\end{figure}
+
+	\begin{figure}[htb!]
+		\centering
+		\begin{subfigure}[b]{0.8\textwidth}
+			\centering
+			\input{opamp/basic_stages/amp_inv.tex}
+			\caption{Inverting.%
+				\label{fig__opamp__basic_stage__amp_inv}}
+			\vspace*{3ex}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.8\textwidth}
+			\centering
+			\input{opamp/basic_stages/amp_ninv.tex}
+			\caption{Non-inverting.%
+				\label{fig__opamp__basic_stage__amp_ninv}}
+		\end{subfigure}
+		\caption{Amplifiers.%
+			\label{fig__opamp__basic_stage__amp}}
+	\end{figure}
+
+
+
+\section{Electrical arithmetic operators}
+
+
+	\begin{figure}[htb]
+		\centering
+		\input{opamp/arithmetic_op/V_sum.tex}
+		\caption{Voltage sum.%
+			\label{fig__opamp__arithm_op__Vsum}}
+	\end{figure}
+
+
+
+\section{First order active filters}
+
+	First order active filters include low-pass and high-pass filters, either with infinite (\cref{fig__opamp__filter_1st_ord_Ginf}) or limited (\cref{fig__opamp__filter_1st_ord_Glim}) gain.
+
+
+	\begin{figure}[htb]
+		\centering
+		\begin{subfigure}[b]{0.8\textwidth}
+			\centering
+			\input{opamp/filter_1st_order/low_pass__Ginf.tex}
+			\caption{Low-pass.%
+				\label{fig__opamp__filter_1st_ord_Ginf__low_pass}}
+			\vspace*{3ex}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.8\textwidth}
+			\centering
+			\input{opamp/filter_1st_order/high_pass__Ginf.tex}
+			\caption{High-pass.%
+				\label{fig__opamp__filter_1st_ord_Ginf__high_pass}}
+		\end{subfigure}
+		\caption{First order active filters op amps architectures with infinite gain.%
+			\label{fig__opamp__filter_1st_ord_Ginf}}
+	\end{figure}
+
+	\begin{figure}[htb]
+		\centering
+		\begin{subfigure}[b]{1\textwidth}
+			\centering
+			\input{opamp/filter_1st_order/low_pass__Glim.tex}
+			\caption{Low-pass.%
+				\label{fig__opamp__filter_1st_ord_Glim__low_pass}}
+			\vspace*{3ex}
+		\end{subfigure}
+		\begin{subfigure}[b]{1\textwidth}
+			\centering
+			\input{opamp/filter_1st_order/high_pass__Glim.tex}
+			\caption{High-pass.%
+				\label{fig__opamp__filter_1st_ord_Glim__high_pass}}
+		\end{subfigure}
+		\caption{First order active filters op amps architectures with limited gain.%
+			\label{fig__opamp__filter_1st_ord_Glim}}
+	\end{figure}
